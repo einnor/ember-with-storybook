@@ -1,9 +1,11 @@
 import { storiesOf } from '@storybook/ember';
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
+import { withNotes } from '@storybook/addon-notes';
 import { hbs } from 'ember-cli-htmlbars';
 
 const stories = storiesOf('Button', module)
-  .addDecorator(withKnobs);
+  .addDecorator(withKnobs)
+  .addDecorator(withNotes);
 
 stories.add('Default', () => ({
   template: hbs`
@@ -12,7 +14,7 @@ stories.add('Default', () => ({
 context: {
   label: text('label', 'Default Button'),
 },
-}));
+}), { notes: 'A very simple button component' });
 
 const themes = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
 const icons = ['', 'anchor', 'bullseye', 'coffee', 'dragon', 'eye', 'female', 'gem', 'headphones', 'icons'];
@@ -42,4 +44,4 @@ stories.add('Themes', () => ({
       console.error('Error log');
     },
   }
-}));
+}), { notes: 'Showing advanced options of a button component' });
