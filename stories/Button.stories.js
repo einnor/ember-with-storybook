@@ -1,11 +1,13 @@
 import { storiesOf } from '@storybook/ember';
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
 import { withNotes } from '@storybook/addon-notes';
+import { withA11y } from '@storybook/addon-a11y';
 import { hbs } from 'ember-cli-htmlbars';
 
 const stories = storiesOf('Button', module)
   .addDecorator(withKnobs)
-  .addDecorator(withNotes);
+  .addDecorator(withNotes)
+  .addDecorator(withA11y);
 
 stories.add('Default', () => ({
   template: hbs`
