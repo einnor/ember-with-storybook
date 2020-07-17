@@ -17,10 +17,11 @@ context: {
 const themes = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
 stories.add('Themes', () => ({
   template: hbs`
-    <Button @type={{type}}>{{type}} {{label}}</Button>
+    <Button @type={{type}} @disabled={{disabled}}>{{type}} {{label}}</Button>
   `,
   context: {
     label: text('label', 'button'),
-    type: select('@type', themes, 'primary'),
+    type: select('type', themes, 'primary'),
+    disabled: boolean('disabled', false),
   }
 }));
