@@ -5,5 +5,8 @@
   @block={{block}}
   @onClick={{action "onClick"}}
 >
+  {{#if icon}}
+  <FaIcon @icon={{icon}} style="margin-right: 5px;" />
+  {{/if}}
   {{yield}}
 </BsButton>

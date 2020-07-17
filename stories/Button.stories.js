@@ -15,14 +15,17 @@ context: {
 }));
 
 const themes = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
+const icons = ['', 'anchor', 'bullseye', 'coffee', 'dragon', 'eye', 'female', 'gem', 'headphones', 'icons'];
 stories.add('Themes', () => ({
   template: hbs`
-    <Button @type={{type}} @outline={{outline}} @disabled={{disabled}}>{{type}} {{label}}</Button>
+    <Button @type={{type}} @outline={{outline}} @disabled={{disabled}} @block={{block}} @icon={{icon}}>{{if outline 'Outlined'}} {{if disabled 'Disabled'}} {{label}}</Button>
   `,
   context: {
-    label: text('label', 'button'),
+    label: text('label', 'Button'),
     type: select('type', themes, 'primary'),
+    icon: select('icon', icons, ''),
     outline: boolean('outline', false),
     disabled: boolean('disabled', false),
+    block: boolean('block', false),
   }
 }));
