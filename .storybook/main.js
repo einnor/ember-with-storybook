@@ -8,5 +8,6 @@ module.exports = {
     '@storybook/addon-viewport/register',
     '@storybook/addon-notes/register',
     '@storybook/addon-a11y/register',
+    'storybook-addon-paddings',
   ],
 };
