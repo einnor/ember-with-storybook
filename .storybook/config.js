@@ -1,4 +1,5 @@
 import { configure } from '@storybook/ember';
+import '@storybook/addon-console';
 
 function loadStories() {
   // require('../stories/index.js');

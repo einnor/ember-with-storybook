@@ -73,6 +73,7 @@
     "edition": "octane"
   },
   "dependencies": {
+    "@storybook/addon-console": "^1.2.1",
     "@storybook/addon-knobs": "^5.3.19",
     "@storybook/addon-storysource": "^5.3.19",
     "@storybook/addon-viewport": "^5.3.19"

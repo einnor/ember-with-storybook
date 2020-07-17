@@ -18,7 +18,16 @@ const themes = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 
 const icons = ['', 'anchor', 'bullseye', 'coffee', 'dragon', 'eye', 'female', 'gem', 'headphones', 'icons'];
 stories.add('Themes', () => ({
   template: hbs`
-    <Button @type={{type}} @outline={{outline}} @disabled={{disabled}} @block={{block}} @icon={{icon}}>{{if outline 'Outlined'}} {{if disabled 'Disabled'}} {{label}}</Button>
+    <Button
+      @type={{type}}
+      @outline={{outline}}
+      @disabled={{disabled}}
+      @block={{block}}
+      @icon={{icon}}
+      onClick={{onClick}}
+    >
+      {{if outline 'Outlined'}} {{if disabled 'Disabled'}} {{label}}
+    </Button>
   `,
   context: {
     label: text('label', 'Button'),
@@ -27,5 +36,10 @@ stories.add('Themes', () => ({
     outline: boolean('outline', false),
     disabled: boolean('disabled', false),
     block: boolean('block', false),
+    onClick() {
+      console.log('Normal log');
+      console.warn('Warn log');
+      console.error('Error log');
+    },
   }
 }));
